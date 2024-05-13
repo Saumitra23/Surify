@@ -4,18 +4,24 @@ import { IoIosAdd } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPlaylist } from "../redux/features/dataSlice";
+import Library from "../containers/Library";
 
 const NavInfo = () => {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.details);
+  console.log("Data", data);
   return (
-    <div className="p-4 relative">
-      <div className="flex flex-row justify-start flex-1">
+    <div className="relative">
+      <div className="px-4 pt-4 flex flex-row justify-start flex-1">
         <VscLibrary
           cursor={`pointer`}
           className="text-gray-500 hover:text-white"
           size={25}
         />
         <h3
-          onClick={() => console.log("duhh")}
+          onClick={() => dispatch(fetchPlaylist())}
           className="px-4 hover:hover_prop hover:after:after"
         >
           Your Library
@@ -25,23 +31,13 @@ const NavInfo = () => {
           <FaArrowRight className="mt-1.5  hover:hover_prop" />
         </div>
       </div>
-      <ol className="flex flex-1 flex-row text-sm justify-between mt-4">
+      <ol className="px-4 flex flex-1 flex-row text-sm justify-between mt-4">
         <li>Playlists</li>
         <li>Artists</li>
         <li>Albums</li>
         <li>Podcasts & Shows</li>
       </ol>
-      <div className="flex flex-row justify-between mt-5">
-        <CiSearch
-          size={25}
-          onClick={() => console.log("clicked")}
-          className="hover:hover_prop"
-        />
-        <div className="flex flex-row hover:hover_prop">
-          <h3 className="flex text-[14px] mx-1">Recents</h3>
-          <GiHamburgerMenu className="mt-1" />
-        </div>
-      </div>
+      <Library />
     </div>
   );
 };

@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply bg-gradient-to-b overscroll-auto from-blue-950 to-black;
+  }
   li {
     @apply bg-gray-500 text-white py-1.5 px-2 rounded-xl cursor-pointer;
     transition: all 0.5s ease-in-out;
@@ -25,6 +28,7 @@
     content: "Collapse your Library";
     top: -20px;
     left: 10px;
+    z-index: 2;
     font-size: 16px;
     padding: 2px 5px;
     border-radius: 3px;
