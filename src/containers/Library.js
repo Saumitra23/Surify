@@ -4,9 +4,10 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import LibraryCard from "../components/LibraryCard";
 import { useSelector } from "react-redux";
 const Library = () => {
-  const { playlistData } = useSelector((state) => state.details);
+  const { playlistData, artistData } = useSelector((state) => state.details);
+  const data = [...playlistData, ...artistData];
   return (
-    <div className="h-screen flex-1 mt-3 px-4 pr-5 max-h-[1050px] overflow-scroll">
+    <div className="h-screen flex-1 mt-3 px-4 pr-5 max-h-[1000px] overflow-scroll">
       <div className="flex flex-row justify-between mt-5">
         <CiSearch
           size={25}
@@ -18,7 +19,7 @@ const Library = () => {
           <GiHamburgerMenu className="mt-1" />
         </div>
       </div>
-      <LibraryCard playlist={playlistData} />
+      <LibraryCard data={data} />
     </div>
   );
 };

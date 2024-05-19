@@ -4,7 +4,7 @@ import MainNav from "./MainNav";
 
 const SideNav = () => {
   return (
-    <div className="flex max-w-96 m-2 flex-col gap-2 text-xl text-gray-400">
+    <div className="flex min-w-96 m-2 flex-col gap-2 text-xl text-gray-400">
       <UpperNav />
       <MainNav />
     </div>

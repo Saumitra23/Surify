@@ -36,27 +36,15 @@ const Login = () => {
   return (
     <section className="h-screen text-white justify-center">
       <img src={Logo} width={300} className="mx-auto mb-[200px]"></img>
-      <div className="flex-1 flex flex-col m-auto text-center w-[700px] h-[700px] justify-around bg-gradient-to-t from-blue-950 to-black">
-        <h1 className="m-auto text-4xl font-bold">Log in to Surify</h1>
-        <form className="flex text-gray-400 flex-col gap-5 justify-center mx-auto">
-          <input
-            className="w-80 p-2 rounded-sm bg-gray-900"
-            value={`Saumitrashukla23@gmail.com`}
-          />
-          <input
-            className="w-80 p-2 rounded-sm bg-gray-900"
-            value={`*********`}
-          />
-        </form>
-        <div className="flex flex-col m-auto gap-5">
+      <div className="flex-1 flex flex-col m-auto text-center w-[500px] h-[500px] justify-around bg-gradient-to-t from-blue-950 to-black">
+        <h1 className="mt-20 flex-1 text-4xl font-bold">Log in to Surify</h1>
+
+        <div className="flex-1 flex-col m-auto gap-5">
           <a href={authUrl}>
-            <button className="m-auto w-40 h-12 rounded-md bg-gradient-to-b from-black to-gray-700">
-              Log In
+            <button className="m-auto w-40 text-black h-12 rounded-md bg-green-800 transition-all ease-in-out duration-500 hover:scale-105 hover:bg-green-700 ">
+              Log In Using Spotify
             </button>
           </a>
-          <button className="m-auto w-40 h-12 rounded-md bg-gradient-to-b from-black to-gray-700">
-            Forgot Password
-          </button>
         </div>
       </div>
     </section>

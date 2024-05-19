@@ -16,6 +16,10 @@ const router = createBrowserRouter([
     element: window.localStorage.getItem("token") ? <Home /> : <Login />,
   },
   {
+    path: "login",
+    element: <Login />,
+  },
+  {
     path: "/home",
     element: <Home />,
   },
