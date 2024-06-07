@@ -1,16 +1,22 @@
 import React from "react";
 
-const LibraryCard = ({ data }) => {
+const LibraryCard = ({ data, navState }) => {
   return data.map((val) => (
     <div
       key={val.id}
-      className="py-4 flex flex-row justify-around text-center transition-all ease-in-out duration-500 hover:scale-105 hover:cursor-pointer shadow-md hover:card_dark"
+      className="py-4 flex flex-row justify-around text-center transition-all ease-in-out duration-500 hover:scale-105 hover:cursor-pointer shadow-md hover:card_dark overflow-hidden"
     >
       <img
         src={val.images[0].url}
-        className="flex w-14 mr-10 ml-1 rounded-sm"
+        className={`flex mr-10 ml-1 ${
+          !navState ? "rounded-full w-10" : "rounded-sm w-14"
+        }`}
       />
-      <h3 className="flex text-[1rem] flex-1 m-auto justify-start hover:text-white">
+      <h3
+        className={`${
+          !navState && "hidden"
+        } flex text-[1rem] flex-1 m-auto justify-start hover:text-white`}
+      >
         {val.name}
       </h3>
     </div>

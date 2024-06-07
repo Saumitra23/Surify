@@ -3,12 +3,20 @@ import { CiSearch } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
 import LibraryCard from "../components/LibraryCard";
 import { useSelector } from "react-redux";
-const Library = () => {
+const Library = ({ navState }) => {
   const { playlistData, artistData } = useSelector((state) => state.details);
   const data = [...playlistData, ...artistData];
   return (
-    <div className="h-screen flex-1 mt-3 px-4 pr-5 max-h-[1000px] overflow-scroll">
-      <div className="flex flex-row justify-between mt-5">
+    <div
+      className={`h-screen flex-1 mt-3 px-4 pr-5 ${
+        navState ? "max-h-[1000px]" : "max-h-[1050px]"
+      } overflow-scroll ${!navState && "no-scrollbar"}`}
+    >
+      <div
+        className={`${
+          !navState && "hidden"
+        } flex flex-row justify-between mt-5`}
+      >
         <CiSearch
           size={25}
           onClick={() => console.log("clicked")}
@@ -19,7 +27,7 @@ const Library = () => {
           <GiHamburgerMenu className="mt-1" />
         </div>
       </div>
-      <LibraryCard data={data} />
+      <LibraryCard navState={navState} data={data} />
     </div>
   );
 };

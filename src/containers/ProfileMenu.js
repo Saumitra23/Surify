@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import Menu from "../components/Menu";
 const ProfileMenu = () => {
   const userDetails = useSelector((state) => state.details.user);
-  const userIcon = userDetails?.display_name.substr(0, 1) ?? "A";
+  const userIcon = userDetails?.display_name?.substr(0, 1) ?? "A";
   const [toggleMenu, setToggleMenu] = useState(false);
   const [isPressed, setIsPressed] = useState("");
   return (

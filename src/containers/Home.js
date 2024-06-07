@@ -6,9 +6,8 @@ import ProfileMenu from "./ProfileMenu";
 
 const Home = () => {
   useSync();
-
   return (
-    <div className="flex flex-row h-screen">
+    <div className="flex flex-row h-screen relative">
       <SideNav />
       <Recommendations />
       <ProfileMenu />
