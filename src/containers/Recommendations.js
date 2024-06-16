@@ -14,7 +14,7 @@ const Recommendations = () => {
 
   return (
     <div
-      className={`flex flex-1 m-2 p-2 w-screen max-w-[2150px] h-[1275px] rounded-md transition-all delay-1000`}
+      className={`flex flex-1 m-2 p-2 w-screen max-w-[2500px] h-[1275px] rounded-md transition-all delay-1000`}
       style={{ background: `${bgColor}` }}
     >
       <MusicGrid data={gridData.slice(0, 8)} bgChangeHandler={handleBgChange} />

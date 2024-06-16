@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../assets/Logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +9,10 @@ const Login = () => {
   const session = useSelector((state) => state.login.isSession);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const [pos, setPos] = useState({
+    x: 0,
+    y: 0,
+  });
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
@@ -36,13 +39,34 @@ const Login = () => {
   return (
     <section className="h-screen text-white justify-center">
       <img src={Logo} width={300} className="mx-auto mb-[200px]"></img>
-      <div className="flex-1 flex flex-col m-auto text-center w-[500px] h-[500px] justify-around bg-gradient-to-t from-blue-950 to-black">
-        <h1 className="mt-20 flex-1 text-4xl font-bold">Log in to Surify</h1>
+      <div
+        className="flex cursor-pointer relative flex-col m-auto text-center w-[500px] h-[500px] justify-around bg-gradient-to-t from-blue-950 to-black"
+        onPointerMove={(e) => {
+          console.log("e", e, e.clientY);
+          setPos({ x: e.clientX, y: e.clientY });
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            background: `linear-gradient(blue, black)`,
+            borderRadius: "50%",
+            boxShadow: "4px 4px 40px 40px blue",
+            transform: `translate(${pos.x}px, ${pos.y}px)`,
+            left: -640,
+            top: -400,
+            width: 0,
+            height: 0,
+          }}
+        ></div>
+        <h1 className="mt-20 flex-1 text-4xl font-bold z-10">
+          Log in to Surify
+        </h1>
 
         <div className="flex-1 flex-col m-auto gap-5">
           <a href={authUrl}>
             <button className="m-auto w-40 text-black h-12 rounded-md bg-green-800 transition-all ease-in-out duration-500 hover:scale-105 hover:bg-green-700 ">
-              Log In Using Spotify
+              Log in using Spotify
             </button>
           </a>
         </div>
