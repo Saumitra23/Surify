@@ -26,7 +26,7 @@ export default function useSync() {
     } else if (!tokenValid) {
       console.log("ent sync 3");
       window.localStorage.removeItem("token");
-      navigate("/login");
+      navigate("/");
     }
   }, [synced, tokenValid]);
 }

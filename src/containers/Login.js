@@ -9,10 +9,7 @@ const Login = () => {
   const session = useSelector((state) => state.login.isSession);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [pos, setPos] = useState({
-    x: 0,
-    y: 0,
-  });
+
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
@@ -39,26 +36,7 @@ const Login = () => {
   return (
     <section className="h-screen text-white justify-center">
       <img src={Logo} width={300} className="mx-auto mb-[200px]"></img>
-      <div
-        className="flex cursor-pointer relative flex-col m-auto text-center w-[500px] h-[500px] justify-around bg-gradient-to-t from-blue-950 to-black"
-        onPointerMove={(e) => {
-          console.log("e", e, e.clientY);
-          setPos({ x: e.clientX, y: e.clientY });
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            background: `linear-gradient(blue, black)`,
-            borderRadius: "50%",
-            boxShadow: "4px 4px 40px 40px blue",
-            transform: `translate(${pos.x}px, ${pos.y}px)`,
-            left: -640,
-            top: -400,
-            width: 0,
-            height: 0,
-          }}
-        ></div>
+      <div className="flex cursor-pointer relative flex-col m-auto text-center w-[500px] h-[500px] justify-around bg-gradient-to-t from-blue-950 to-black">
         <h1 className="mt-20 flex-1 text-4xl font-bold z-10">
           Log in to Surify
         </h1>

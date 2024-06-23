@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const CLIENT_ID = "caceeadfec2b4d489583ceee9a514ee1";
-const REDIRECT_URI = "http://localhost:3000";
+const REDIRECT_URI = "http://localhost:3000/home";
 const baseUrl = "https://api.spotify.com/v1/";
 const authUrl = "https://accounts.spotify.com/authorize";
 const SCOPE =

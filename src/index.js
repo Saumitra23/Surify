@@ -13,10 +13,6 @@ import "./index.css";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: window.localStorage.getItem("token") ? <Home /> : <Login />,
-  },
-  {
-    path: "login",
     element: <Login />,
   },
   {

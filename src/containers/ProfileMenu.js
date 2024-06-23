@@ -1,11 +1,17 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
 import Menu from "../components/Menu";
+import useProfile from "../hooks/useProfile";
+
 const ProfileMenu = () => {
-  const userDetails = useSelector((state) => state.details.user);
-  const userIcon = userDetails?.display_name?.substr(0, 1) ?? "A";
-  const [toggleMenu, setToggleMenu] = useState(false);
-  const [isPressed, setIsPressed] = useState("");
+  const {
+    userDetails,
+    userIcon,
+    toggleMenu,
+    isPressed,
+    setToggleMenu,
+    setIsPressed,
+    clickHandler,
+  } = useProfile();
+
   return (
     <div className="absolute top-6 right-6">
       <div
@@ -17,7 +23,9 @@ const ProfileMenu = () => {
       >
         {userIcon}
       </div>
-      {toggleMenu ? <Menu isPremium={true} /> : null}
+      {toggleMenu ? (
+        <Menu isPremium={true} clickHandler={clickHandler} />
+      ) : null}
     </div>
   );
 };
