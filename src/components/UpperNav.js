@@ -3,9 +3,9 @@ import { CiHome } from "react-icons/ci";
 import { GiMusicSpell } from "react-icons/gi";
 
 const navIcons = {
-  home: <CiHome size={35} className="min-w-10" />,
-  search: <CiSearch size={35} className="min-w-10" />,
-  nirvana: <GiMusicSpell size={35} className="min-w-10" />,
+  home: <CiHome size={35} className="xl:min-w-6 2xl:min-w-10" />,
+  search: <CiSearch size={35} className="xl:min-w-6 2xl:min-w-10" />,
+  nirvana: <GiMusicSpell size={35} className="xl:min-w-6 2xl:min-w-10" />,
 };
 
 const UpperNav = ({ iconType, label, id, clickHandler }) => {

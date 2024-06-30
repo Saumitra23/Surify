@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 import MusicGrid from "../components/MusicGrid";
+import SearchGrid from "./SearchGrid";
 import { customGenerator } from "../utilities/customGradient";
 import { useSelector } from "react-redux";
 
-const Recommendations = () => {
+const Recommendations = forwardRef((props, ref) => {
   const gridData = useSelector((state) => state.details.playlistData);
+  const isSearch = useSelector((state) => state.info.isSearch);
   const [bgColor, setBgColor] = useState(`linear-gradient(blue, black)`);
 
   const handleBgChange = () => {
@@ -17,9 +19,16 @@ const Recommendations = () => {
       className={`flex flex-1 m-2 p-2 w-screen max-w-[2500px] h-[1275px] rounded-md transition-all delay-1000`}
       style={{ background: `${bgColor}` }}
     >
-      <MusicGrid data={gridData.slice(0, 8)} bgChangeHandler={handleBgChange} />
+      {isSearch ? (
+        <SearchGrid ref={ref} />
+      ) : (
+        <MusicGrid
+          data={gridData.slice(0, 8)}
+          bgChangeHandler={handleBgChange}
+        />
+      )}
     </div>
   );
-};
+});
 
 export default Recommendations;

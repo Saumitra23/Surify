@@ -21,7 +21,7 @@ const Login = () => {
         .split("&")
         .find((elem) => elem.startsWith("access_token"))
         .split("=")[1];
-
+      console.log("token", token);
       window.location.hash = "";
       window.localStorage.setItem("token", token);
       dispatch(login());

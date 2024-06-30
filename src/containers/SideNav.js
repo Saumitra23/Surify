@@ -1,16 +1,13 @@
 import React from "react";
-import useNav from "../hooks/useNav";
 import UpperNav from "../components/UpperNav";
 import NavInfo from "../components/NavInfo";
 
-const SideNav = () => {
-  const { navState, onNavChange, handleHome, handleSearch, handleNirvana } =
-    useNav();
-
+const SideNav = (props) => {
+  console.log("props", props);
   return (
     <div
       className={`flex ${
-        navState ? "min-w-96" : "max-w-20"
+        props.navState ? "min-w-96" : "max-w-20"
       } m-2 flex-col gap-2 text-xl text-gray-400 overflow-hidden`}
     >
       <div className="flex h-40 flex-col card_light rounded-md justify-around">
@@ -18,23 +15,23 @@ const SideNav = () => {
           iconType={`home`}
           label={`Home`}
           id={0}
-          clickHandler={handleHome}
+          clickHandler={props.handleHome}
         />
         <UpperNav
           iconType={`search`}
           label={`Search`}
           id={1}
-          clickHandler={handleSearch}
+          clickHandler={props.handleSearch}
         />
         <UpperNav
           iconType={`nirvana`}
           label={`MyNirvana`}
           id={2}
-          clickHandler={handleNirvana}
+          clickHandler={props.handleNirvana}
         />
       </div>
       <div className="card_light rounded-lg">
-        <NavInfo navState={navState} onNavChange={onNavChange} />
+        <NavInfo navState={props.navState} onNavChange={props.onNavChange} />
       </div>
     </div>
   );
