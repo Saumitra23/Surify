@@ -1,19 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  isSearch: false,
+let initialState = {
+  currentSelection: "",
+  currentData: null,
 };
 
 export const infoSlice = createSlice({
   name: "info",
   initialState,
   reducers: {
-    updateSearch: (state, action) => {
+    updateInfo: (state, action) => {
       console.log("action", action);
-      state.isSearch = action.payload;
+      state.currentSelection = action.payload.type;
+      state.currentData = action.payload.data;
     },
   },
 });
 
-export const { updateSearch } = infoSlice.actions;
+export const { updateInfo } = infoSlice.actions;
 export default infoSlice.reducer;

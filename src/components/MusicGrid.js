@@ -1,5 +1,4 @@
 import React from "react";
-import { customGenerator } from "../utilities/customGradient";
 const MusicGrid = ({ data, bgChangeHandler }) => {
   return (
     <div className="p-4 pt-20 flex-1 max-h-80 grid grid-cols-4 grid-rows-2 gap-10">

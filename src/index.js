@@ -9,6 +9,7 @@ import Login from "./containers/Login";
 import Home from "./containers/Home";
 
 import "./index.css";
+import Playlist from "./containers/Playlist";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,12 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+    children: [
+      {
+        path: "playlist",
+        element: <Playlist />,
+      },
+    ],
   },
   {
     path: "/sideNav",

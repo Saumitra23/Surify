@@ -6,7 +6,8 @@ import { useSelector } from "react-redux";
 
 const Recommendations = forwardRef((props, ref) => {
   const gridData = useSelector((state) => state.details.playlistData);
-  const isSearch = useSelector((state) => state.info.isSearch);
+  const isSearch =
+    useSelector((state) => state.info.currentSelection) == "search";
   const [bgColor, setBgColor] = useState(`linear-gradient(blue, black)`);
 
   const handleBgChange = () => {
@@ -20,7 +21,11 @@ const Recommendations = forwardRef((props, ref) => {
       style={{ background: `${bgColor}` }}
     >
       {isSearch ? (
-        <SearchGrid ref={ref} />
+        <SearchGrid
+          ref={ref}
+          searchInput={props.searchInput}
+          searchInputHandler={props.searchInputHandler}
+        />
       ) : (
         <MusicGrid
           data={gridData.slice(0, 8)}

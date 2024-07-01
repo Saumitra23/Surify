@@ -12,6 +12,7 @@ const NavInfo = ({ navState, onNavChange }) => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.details);
   console.log("Data", data);
+
   return (
     <div className={navState ? `relative` : ``}>
       <div className="mx-7 pt-4 flex flex-row justify-start flex-1">

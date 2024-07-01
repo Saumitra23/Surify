@@ -1,10 +1,18 @@
 import React from "react";
-
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { updateInfo } from "../redux/infoSlice";
 const LibraryCard = ({ data, navState }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   return data.map((val) => (
     <div
       key={val.id}
       className="py-4 flex flex-row justify-around text-center transition-all ease-in-out duration-500 hover:scale-105 hover:cursor-pointer shadow-md hover:card_dark overflow-hidden"
+      onClick={() => {
+        dispatch(updateInfo({ type: val.type, data: val }));
+        navigate("playlist");
+      }}
     >
       <img
         src={val.images[0].url}

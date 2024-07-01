@@ -6,8 +6,10 @@ const SearchGrid = forwardRef((props, ref) => {
     <div>
       <input
         className="w-96 h-12 p-2 m-2 rounded-2xl border-2 focus:border-black focus:outline-none"
-        placeholder="let's listen to?"
+        placeholder="Let's listen to?"
         ref={ref}
+        value={props.searchInput}
+        onChange={props.searchInputHandler}
       />
     </div>
   );
