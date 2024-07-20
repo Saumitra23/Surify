@@ -8,7 +8,7 @@ const PlaylistHeader = ({ playlistData }) => {
         <h3 className="mt-8 px-1">{playlistData.type}</h3>
         <h1 className="text-8xl font-serif py-2">{playlistData.name}</h1>
         <h3 className="px-1 text-lg">{playlistData?.description}</h3>
-        <h3 className="px-1 text-white text-md">{`by: ${playlistData.owner.display_name}`}</h3>
+        <h3 className="px-1 text-md">{`by: ${playlistData.owner.display_name}`}</h3>
       </div>
     </section>
   );

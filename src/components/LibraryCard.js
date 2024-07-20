@@ -1,10 +1,12 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { updateInfo } from "../redux/infoSlice";
+import { fetchPlaylistData, updateInfo } from "../redux/infoSlice";
+
 const LibraryCard = ({ data, navState }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   return data.map((val) => (
     <div
       key={val.id}
