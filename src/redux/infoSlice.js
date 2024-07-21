@@ -5,6 +5,7 @@ import { fetchPlaylist } from "./features/dataSlice";
 let initialState = {
   currentSelection: "",
   currentData: null,
+  tokenSync: true,
 };
 
 export const infoSlice = createSlice({
@@ -24,6 +25,7 @@ export const infoSlice = createSlice({
     });
     builder.addCase(fetchPlaylistData.rejected, (state, action) => {
       console.log("rejected");
+      state.tokenSync = false;
     });
   },
 });
