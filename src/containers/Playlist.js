@@ -33,7 +33,7 @@ const Playlist = () => {
 
   return (
     <div
-      className={`flex flex-1 flex-col gap-4 m-2 w-screen max-w-[2500px] h-[1275px] rounded-md transition-all delay-1000`}
+      className={`flex flex-1 flex-col gap-4 m-2 w-screen max-w-[2500px] h-[1065px] rounded-md transition-all delay-1000`}
       style={{ background: bgColor }}
     >
       <PlaylistHeader playlistData={playlistData} />

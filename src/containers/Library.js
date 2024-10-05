@@ -8,8 +8,8 @@ const Library = ({ navState }) => {
   const data = [...playlistData, ...artistData];
   return (
     <div
-      className={`h-screen flex-1 mt-3 px-4 pr-5 ${
-        navState ? "max-h-[1000px]" : "max-h-[1050px]"
+      className={`flex-1 mt-3 px-4 pr-5 ${
+        navState ? "h-[800px]" : "h-[900px]"
       } overflow-scroll ${!navState && "no-scrollbar"}`}
     >
       <div

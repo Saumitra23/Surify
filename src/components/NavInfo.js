@@ -14,7 +14,7 @@ const NavInfo = ({ navState, onNavChange }) => {
   console.log("Data", data);
 
   return (
-    <div className={navState ? `relative` : ``}>
+    <div className={navState ? `relative h-[900px]` : `h-[900px]`}>
       <div className="mx-7 pt-4 flex flex-row justify-start flex-1">
         <div
           className={`flex flex-row w-36 justify-between hover:hover_prop ${

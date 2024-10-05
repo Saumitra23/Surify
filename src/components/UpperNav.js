@@ -8,7 +8,7 @@ const navIcons = {
   nirvana: <GiMusicSpell size={35} className="xl:min-w-6 2xl:min-w-10" />,
 };
 
-const UpperNav = ({ iconType, label, id, clickHandler }) => {
+const UpperNav = ({ iconType, label, clickHandler, navState }) => {
   // const searchArtists = async (e) => {
   //   // e.preventDefault();
   //   const { data } = await axios.get(
@@ -25,13 +25,14 @@ const UpperNav = ({ iconType, label, id, clickHandler }) => {
   //   );
   //   console.log("data", data);
   // };
+  console.log("navstate", navState);
   return (
     <div
-      className="flex flex-row gap-4 justify-start mx-6 hover:cursor-pointer hover:text-white"
+      className="flex flex-row gap-4  justify-start mx-6 hover:cursor-pointer hover:text-white"
       onClick={clickHandler}
     >
       {navIcons[iconType]}
-      <h3 className="mt-1">{label}</h3>
+      <h3 className={`mt-1 ${navState ? "initial" : "hidden"}`}>{label}</h3>
     </div>
   );
 };
