@@ -1,4 +1,6 @@
 import React from "react";
+import Logo from "../assets/Logo.png";
+
 const MusicGrid = ({ data, bgChangeHandler }) => {
   return (
     <div className="p-4 pt-20 flex-1 max-h-80 grid grid-cols-4 grid-rows-2 gap-10">
@@ -17,6 +19,12 @@ const MusicGrid = ({ data, bgChangeHandler }) => {
           </h3>
         </div>
       ))}
+      <img
+        src={Logo}
+        alt="img-home"
+        className="absolute top-1/2 right-[36%]"
+        width={450}
+      />
     </div>
   );
 };

@@ -17,7 +17,7 @@ const Recommendations = forwardRef((props, ref) => {
 
   return (
     <div
-      className={`flex flex-1 m-2 p-2 w-screen max-w-[2500px] h-[1065px] rounded-md transition-all delay-1000`}
+      className={`flex flex-1 m-2 p-2 w-screen max-w-[2500px] h-max-screen rounded-md transition-all delay-1000`}
       style={{ background: bgColor }}
     >
       {isSearch ? (

@@ -6,7 +6,7 @@ const Menu = ({ isPremium, clickHandler }) => {
     <div
       className={`absolute flex flex-col justify-around top-14 right-0 bg-gray-600 w-60 ${
         isPremium ? "h-52 " : "h-40"
-      } hover:cursor-pointer rounded-sm text-white`}
+      } hover:cursor-pointer rounded-md text-white`}
       onClick={clickHandler}
     >
       <h3 className="flex-1 hover:bg-gray-500 pt-2 pb-1 px-4">Account</h3>

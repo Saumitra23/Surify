@@ -15,7 +15,7 @@ const Library = ({ navState }) => {
       <div
         className={`${
           !navState && "hidden"
-        } flex flex-row justify-between mt-5`}
+        } flex flex-row justify-between mt-2`}
       >
         <CiSearch
           size={25}

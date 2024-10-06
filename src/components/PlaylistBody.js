@@ -33,7 +33,7 @@ const PlaylistBody = ({ tracks, count }) => {
             const date_added = new Date(val.added_at).toLocaleDateString();
             return (
               val?.track?.name != "" && (
-                <section className="flex flex-row justify-between m-4 p-2 shadow-xl cursor-pointer hover:bg-gradient-to-b hover:from-gray-200/50 via-gray-500 to-gray-800">
+                <section className="flex flex-row justify-between m-4 p-2 shadow-xl cursor-pointer hover:bg-gradient-to-b hover:from-gray-200/50 via-gray-500 to-gray-800 rounded-md">
                   <h2
                     className="flex-[0.04] text-left my-auto"
                     onMouseEnter={() => {

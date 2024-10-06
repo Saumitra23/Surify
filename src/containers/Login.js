@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../redux/features/loginSlice";
 import { updateToken } from "../redux/features/dataSlice";
 import { auth as authUrl } from "../ApiManager/ApiManager";
+import BgImg from "../assets/bgMusic.jpg";
+
 const Login = () => {
   const session = useSelector((state) => state.login.isSession);
   const dispatch = useDispatch();
@@ -35,20 +37,21 @@ const Login = () => {
   console.log("session", session);
   return (
     <section className="h-screen text-white justify-center">
-      <img src={Logo} width={300} className="mx-auto mb-[200px]"></img>
-      <div className="flex cursor-pointer relative flex-col m-auto text-center w-[500px] h-[500px] justify-around bg-gradient-to-t from-blue-950 to-black">
-        <h1 className="mt-20 flex-1 text-4xl font-bold z-10">
+      <img src={BgImg} alt="bg-img" className="h-screen w-screen" />
+      <img
+        src={Logo}
+        width={300}
+        height={300}
+        className="absolute top-0 right-0 xl:right-28"
+      />
+      <a href={authUrl}>
+        <h1
+          className="absolute top-64 right-20 xl:right-[180px] border-2 border-[#1990AC] px-4 py-2 xl:px-6 xl:py-3 cursor-pointer rounded-md hover:scale-105 ease-in-out duration-300"
+          style={{ backgroundColor: "rgba(25, 144, 172, 0.2)" }}
+        >
           Log in to Surify
         </h1>
-
-        <div className="flex-1 flex-col m-auto gap-5">
-          <a href={authUrl}>
-            <button className="m-auto w-40 text-black h-12 rounded-md bg-green-800 transition-all ease-in-out duration-500 hover:scale-105 hover:bg-green-700 ">
-              Log in using Spotify
-            </button>
-          </a>
-        </div>
-      </div>
+      </a>
     </section>
   );
 };
